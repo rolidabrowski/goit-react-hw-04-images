@@ -6,13 +6,13 @@ import api from '../services/api';
 import PropTypes from 'prop-types';
 import css from './ImageGallery.module.css';
 
+const PER_PAGE = 12;
+
 export const ImageGallery = ({ value, page, onLoadMore }) => {
   const [gallery, setGallery] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [totalPages, setTotalPages] = useState(0);
-
-  let perPage = 12;
 
   useEffect(() => {
     if (!value) {
@@ -26,21 +26,21 @@ export const ImageGallery = ({ value, page, onLoadMore }) => {
     setIsLoading(true);
 
     try {
-      api.fetchPhotos(value, page, perPage).then(({ hits, totalHits }) => {
+      api.fetchPhotos(value, page, PER_PAGE).then(({ hits, totalHits }) => {
         if (hits.length === 0) {
           alert(
             'Sorry, there are no images matching your search query. Please try again.'
           );
         }
         setGallery(prevGallery => [...prevGallery, ...hits]);
-        setTotalPages(Math.floor(totalHits / perPage));
+        setTotalPages(Math.floor(totalHits / PER_PAGE));
       });
     } catch (error) {
       setError(error);
     } finally {
       setIsLoading(false);
     }
-  }, [value, page, perPage, onLoadMore]);
+  }, [value, page, onLoadMore]);
 
   if (error) {
     alert('Something went wrong. Try again.');
