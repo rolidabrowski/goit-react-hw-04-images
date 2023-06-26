@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Modal } from '../Modal';
+import { Modal } from '../index';
 import PropTypes from 'prop-types';
 import css from './ImageGalleryItem.module.css';
 
@@ -45,3 +45,5 @@ ImageGalleryItem.propTypes = {
     largeImageURL: PropTypes.string.isRequired,
   }).isRequired,
 };
+
+export default ImageGalleryItem;

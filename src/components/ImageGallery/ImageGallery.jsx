@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { ImageGalleryItem } from '../ImageGalleryItem';
-import { Button } from '../Button';
-import { MyLoader } from '../Loader';
+import { ImageGalleryItem } from '../index';
+import { Button } from '../index';
+import { MyLoader } from '../index';
 import api from '../services/api';
 import PropTypes from 'prop-types';
 import css from './ImageGallery.module.css';
@@ -69,3 +69,5 @@ ImageGallery.propTypes = {
   page: PropTypes.number.isRequired,
   onLoadMore: PropTypes.func.isRequired,
 };
+
+export default ImageGallery;

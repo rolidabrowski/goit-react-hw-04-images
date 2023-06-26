@@ -1,1 +1,1 @@
-export { ImageGalleryItem } from './ImageGalleryItem';
+export * from './ImageGalleryItem';

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Searchbar } from '../Searchbar';
-import { ImageGallery } from '../ImageGallery';
+import { Searchbar } from '../index';
+import { ImageGallery } from '../index';
 import css from './App.module.css';
 
 export const App = () => {
@@ -27,3 +27,5 @@ export const App = () => {
     </div>
   );
 };
+
+export default App;

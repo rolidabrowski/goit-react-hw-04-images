@@ -19,3 +19,5 @@ export const MyLoader = props => (
 MyLoader.propTypes = {
   props: propTypes.object,
 };
+
+export default MyLoader;
